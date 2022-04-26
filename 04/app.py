@@ -17,16 +17,16 @@ hops = hs.Hops(app)
     name = "MyComponent",
     inputs=[
         hs.HopsString("Name", "N", "Provide your name"),
-        hs.HopsInteger("Age", "A", "Provide your age")
+        hs.HopsInteger("Age", "A", "Provide your age"),
+        hs.HopsInteger("Height", "H", "Provide your height in cm")
     ],
     outputs=[
-       hs.HopsString("Text","T","Print name and age")
+       hs.HopsString("Text","T","Print name, age and height")
     ]
 )
-def printNameAndAge(name, age):
-    text= "My name is {} and I am {} years old".format(name, age)
+def printNameAgeAndHeight(name, age, height):
+    text="My name is {}, I am {} years old and I am {}cm tall.".format(name, age, height)
     return text
-
 
 
 if __name__== "__main__":
